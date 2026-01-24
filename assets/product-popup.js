@@ -76,7 +76,7 @@
 
               <button class="product-popup-add-to-cart" id="popupAddToCart" type="button">
                 <span class="btn-text">ADD TO CART</span>
-                <span class="btn-arrow">→</span>
+                <span class="btn-arrow">⭢</span>
               </button>
             </div>
           </div>
@@ -121,7 +121,7 @@
     // Custom dropdown toggle
     const dropdownTrigger = document.getElementById('popupSizeTrigger');
     const dropdown = document.getElementById('popupSizeDropdown');
-    
+
     dropdownTrigger.addEventListener('click', function (e) {
       e.stopPropagation();
       dropdown.classList.toggle('open');
@@ -276,11 +276,11 @@
     if (slider) {
       // Show slider (in case it was hidden initially)
       slider.style.opacity = '1';
-      
+
       // Calculate position relative to container
       const containerRect = colorButtonsContainer.getBoundingClientRect();
       const buttonRect = buttonElement.getBoundingClientRect();
-      
+
       const offsetLeft = buttonRect.left - containerRect.left;
       const buttonWidth = buttonRect.width;
 
@@ -304,7 +304,7 @@
 
     // Reset trigger text
     trigger.textContent = 'Choose your size';
-    
+
     // Clear existing options
     optionsContainer.innerHTML = '';
 
@@ -315,17 +315,17 @@
       optionBtn.className = 'product-popup-dropdown-option';
       optionBtn.textContent = size;
       optionBtn.setAttribute('data-value', size);
-      
+
       optionBtn.addEventListener('click', function () {
         // Update selected size
         selectedSize = size;
-        
+
         // Update trigger text
         trigger.textContent = size;
-        
+
         // Close dropdown
         dropdown.classList.remove('open');
-        
+
         // Update add to cart button state
         updateAddToCartButton();
       });

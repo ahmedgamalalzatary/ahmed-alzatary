@@ -4,7 +4,7 @@
         "gift-guide-banner": {
             "type": "gift-guide",
             "settings": {
-                "logo_text": "TISSO VISON",
+                "logo_text": "TISSO VISION",
                 "tagline": "Find the ideal gift for your loved ones.",
                 "button1_text": "CHOOSE GIFT",
                 "button1_link": "",
@@ -65,7 +65,7 @@
                 "product_6"
             ],
             "settings": {
-                "heading": "Tisso vison in the wild"
+                "heading": "TISSO VISION in the wild"
             }
         }
     },
