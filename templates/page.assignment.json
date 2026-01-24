@@ -1,0 +1,76 @@
+{
+    "name": "Assignment Page",
+    "sections": {
+        "gift-guide-banner": {
+            "type": "gift-guide",
+            "settings": {
+                "logo_text": "TISSO VISION",
+                "taagline": "Find the ideal gift for your loved ones",
+                "button1_text": "CHOOSE GIFT",
+                "button1_link": "",
+                "heading": " the gift guide",
+                "discription_intro": "<P>Discover Joy Your Ultimate Holiday Gift Destination.</P>",
+                "discription_extra": "<p> Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+                "button2_text": "SHOP NOW",
+                "button2_link": "",
+                "footer_text": "SUSTAINABLE: EITHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+            }
+        },
+        "products-guide-grid": {
+            "type": "products-guide",
+            "blocks": {
+                "block1": {
+                    "type": "product",
+                    "settings": {
+                        "product": "classic-varsity-top"
+                    }
+                },
+                "block2": {
+                    "type": "product",
+                    "settings": {
+                        "product": "floral-white-top"
+                    }
+                },
+                "block3": {
+                    "type": "product",
+                    "settings": {
+                        "product": "classic-leather-jacket"
+                    }
+                },
+                "block4": {
+                    "type": "product",
+                    "settings": {
+                        "product": "dark-demin-top"
+                    }
+                },
+                "block5": {
+                    "type": "product",
+                    "settings": {
+                        "product": "black-leather-bag"
+                    }
+                },
+                "block6": {
+                    "type": "product",
+                    "settings": {
+                        "product": "blue-skill-tuxedo"
+                    }
+                }
+            },
+            "block_order": [
+                "product1",
+                "product2",
+                "product3",
+                "product4",
+                "product5",
+                "product6"
+            ],
+            "settings": {
+                "heading": "TISSO vision in the wild"
+            }
+        }
+    },
+    "order": [
+        "gift-guide-banner",
+        "products-guide-grid"
+    ]
+}
