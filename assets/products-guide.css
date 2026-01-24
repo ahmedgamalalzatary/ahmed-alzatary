@@ -1,0 +1,198 @@
+/* ============================================
+   PRODUCTS GUIDE GRID - STYLES
+   Separated for maintainability
+   ============================================ */
+
+.products-guide-section {
+  padding: 60px 90px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.products-guide-heading {
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 48px 0;
+  text-align: left;
+}
+
+/* ============================================
+   GRID LAYOUT
+   WHY: CSS Grid provides clean responsive layout
+   without complex media queries
+   ============================================ */
+.products-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.products-guide-item {
+  position: relative;
+}
+
+.products-guide-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background: #f5f5f5;
+  aspect-ratio: 3 / 4;
+  /* Maintains consistent card height */
+}
+
+/* Product Image */
+.products-guide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Placeholder SVG styling */
+.products-guide-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   HOTSPOT BUTTON
+   WHY: Centered and hidden by default
+   Only appears on product card hover
+   ============================================ */
+.products-guide-hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+/* Individual hotspot positions for each product */
+.products-guide-item:nth-child(1) .products-guide-hotspot {
+  top: 50%;
+  left: 50%;
+}
+
+.products-guide-item:nth-child(2) .products-guide-hotspot {
+  top: 35%;
+  left: 65%;
+}
+
+.products-guide-item:nth-child(3) .products-guide-hotspot {
+  top: 10%;
+  right: 10%;
+}
+
+.products-guide-item:nth-child(4) .products-guide-hotspot {
+  top: 65%;
+  left: 35%;
+}
+
+.products-guide-item:nth-child(5) .products-guide-hotspot {
+  top: 65%;
+  left: 65%;
+}
+
+.products-guide-item:nth-child(6) .products-guide-hotspot {
+  top: 50%;
+  right: 0%;
+}
+
+/* Show hotspot on card hover */
+.products-guide-card:hover .products-guide-hotspot {
+  visibility: visible;
+}
+
+.products-guide-hotspot:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+}
+
+.products-guide-hotspot:active {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.hotspot-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #000000;
+  line-height: 1;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   WHY: Optimized for all screen sizes
+   ============================================ */
+
+/* Mobile: Single column, hotspot always visible (no hover on mobile) */
+@media screen and (max-width: 749px) {
+  .products-guide-section {
+    padding: 40px 16px;
+  }
+
+  .products-guide-heading {
+    font-size: 1.75rem;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .products-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile: Show hotspot always (no hover state) */
+  .products-guide-hotspot {
+    width: 56px;
+    height: 56px;
+    visibility: visible;
+  }
+
+  .hotspot-icon {
+    font-size: 1.75rem;
+  }
+}
+
+/* Tablet: 2 columns for better spacing */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .products-guide-section {
+    padding: 50px 24px;
+  }
+
+  .products-guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .products-guide-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* Large Desktop: Maintain max-width and spacing */
+@media screen and (min-width: 1440px) {
+  .products-guide-section {
+    padding: 60px 90px;
+  }
+}
+
+/* Accessibility - Focus styles */
+.products-guide-hotspot:focus {
+  outline: 3px solid #0d499f;
+  outline-offset: 2px;
+}
+
+.products-guide-hotspot:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -1,80 +1,76 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
-    "sections": {
-        "gift-guide-banner": {
-            "type": "gift-guide",
-            "settings": {
-                "logo_text": "TISSO VISION",
-                "button1_text": "CHOOSE GIFT",
-                "button1_link": "",
-                "heading": " the gift guide",
-                "button2_text": "SHOP NOW",
-                "button2_link": "",
-                "footer_text": "SUSTAINABLE: EITHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
-            }
-        },
-        "products-guide-grid": {
-            "type": "products-guide",
-            "blocks": {
-                "block1": {
-                    "type": "product",
-                    "settings": {
-                        "product": "classic-varsity-top"
-                    }
-                },
-                "block2": {
-                    "type": "product",
-                    "settings": {
-                        "product": "floral-white-top"
-                    }
-                },
-                "block3": {
-                    "type": "product",
-                    "settings": {
-                        "product": "classic-leather-jacket"
-                    }
-                },
-                "block4": {
-                    "type": "product",
-                    "settings": {
-                        "product": "dark-demin-top"
-                    }
-                },
-                "block5": {
-                    "type": "product",
-                    "settings": {
-                        "product": "black-leather-bag"
-                    }
-                },
-                "block6": {
-                    "type": "product",
-                    "settings": {
-                        "product": "blue-skill-tuxedo"
-                    }
-                }
-            },"block_order": [
-                "product1",
-                "product2",
-                "product3",
-                "product4",
-                "product5",
-                "product6"
-            ],
-            "settings": {
-                "heading": "TISSO vision in the wild"
-            }
-        }
+  "name": "Assignment Page",
+  "sections": {
+    "gift-guide-banner": {
+      "type": "gift-guide",
+      "settings": {
+        "logo_text": "TISSO VISON",
+        "tagline": "Find the ideal gift for your loved ones.",
+        "button1_text": "CHOOSE GIFT",
+        "button1_link": "",
+        "heading": "The Gift Guide",
+        "description_intro": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>",
+        "description_extra": "<p>Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+        "button2_text": "SHOP NOW",
+        "button2_link": "",
+        "footer_text": "SUSTAINABLE: ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+      }
     },
-    "order": [
-        "gift-guide-banner",
-        "products-guide-grid"
-    ]
+    "products-guide-grid": {
+      "type": "products-guide",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product": "floral-white-top"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket"
+          }
+        },
+        "product_4": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top"
+          }
+        },
+        "product_5": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag"
+          }
+        },
+        "product_6": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3",
+        "product_4",
+        "product_5",
+        "product_6"
+      ],
+      "settings": {
+        "heading": "Tisso vison in the wild"
+      }
+    }
+  },
+  "order": [
+    "gift-guide-banner",
+    "products-guide-grid"
+  ]
 }
