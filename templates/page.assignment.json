@@ -1,76 +1,76 @@
 {
-  "name": "Assignment Page",
-  "sections": {
-    "gift-guide-banner": {
-      "type": "gift-guide",
-      "settings": {
-        "logo_text": "TISSO VISON",
-        "tagline": "Find the ideal gift for your loved ones.",
-        "button1_text": "CHOOSE GIFT",
-        "button1_link": "",
-        "heading": "The Gift Guide",
-        "description_intro": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>",
-        "description_extra": "<p>Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
-        "button2_text": "SHOP NOW",
-        "button2_link": "",
-        "footer_text": "SUSTAINABLE: ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
-      }
-    },
-    "products-guide-grid": {
-      "type": "products-guide",
-      "blocks": {
-        "product_1": {
-          "type": "product",
-          "settings": {
-            "product": "classic-varsity-top"
-          }
+    "name": "Assignment Page",
+    "sections": {
+        "gift-guide-banner": {
+            "type": "gift-guide",
+            "settings": {
+                "logo_text": "TISSO VISON",
+                "tagline": "Find the ideal gift for your loved ones.",
+                "button1_text": "CHOOSE GIFT",
+                "button1_link": "",
+                "heading": "The Gift Guide",
+                "description_intro": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>",
+                "description_extra": "<p>Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+                "button2_text": "SHOP NOW",
+                "button2_link": "",
+                "footer_text": "SUSTAINABLE: ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+            }
         },
-        "product_2": {
-          "type": "product",
-          "settings": {
-            "product": "floral-white-top"
-          }
-        },
-        "product_3": {
-          "type": "product",
-          "settings": {
-            "product": "classic-leather-jacket"
-          }
-        },
-        "product_4": {
-          "type": "product",
-          "settings": {
-            "product": "dark-denim-top"
-          }
-        },
-        "product_5": {
-          "type": "product",
-          "settings": {
-            "product": "black-leather-bag"
-          }
-        },
-        "product_6": {
-          "type": "product",
-          "settings": {
-            "product": "blue-silk-tuxedo"
-          }
+        "products-guide-grid": {
+            "type": "products-guide",
+            "blocks": {
+                "product_1": {
+                    "type": "product",
+                    "settings": {
+                        "product": "classic-varsity-top"
+                    }
+                },
+                "product_2": {
+                    "type": "product",
+                    "settings": {
+                        "product": "floral-white-top"
+                    }
+                },
+                "product_3": {
+                    "type": "product",
+                    "settings": {
+                        "product": "classic-leather-jacket"
+                    }
+                },
+                "product_4": {
+                    "type": "product",
+                    "settings": {
+                        "product": "dark-denim-top"
+                    }
+                },
+                "product_5": {
+                    "type": "product",
+                    "settings": {
+                        "product": "black-leather-bag"
+                    }
+                },
+                "product_6": {
+                    "type": "product",
+                    "settings": {
+                        "product": "blue-silk-tuxedo"
+                    }
+                }
+            },
+            "block_order": [
+                "product_1",
+                "product_2",
+                "product_3",
+                "product_4",
+                "product_5",
+                "product_6"
+            ],
+            "settings": {
+                "heading": "Tisso vison in the wild"
+            }
         }
-      },
-      "block_order": [
-        "product_1",
-        "product_2",
-        "product_3",
-        "product_4",
-        "product_5",
-        "product_6"
-      ],
-      "settings": {
-        "heading": "Tisso vison in the wild"
-      }
-    }
-  },
-  "order": [
-    "gift-guide-banner",
-    "products-guide-grid"
-  ]
+    },
+    "order": [
+        "gift-guide-banner",
+        "products-guide-grid"
+    ]
 }
