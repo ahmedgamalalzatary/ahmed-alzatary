@@ -1,0 +1,271 @@
+{% comment %}
+  GIFT GUIDE BANNER SECTION
+
+  Purpose: Display hero banner with promotional content
+  Features:
+  - Logo and tagline in header bar
+  - Main heading with description
+  - Animated CTA buttons
+  - Mobile responsive with hamburger menu
+  - Footer sustainability message
+
+  Author: Candidate Assignment
+  Date: 2026-01-03
+{% endcomment %}
+
+{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="gift-guide-section" data-section-id="{{ section.id }}">
+  {%- comment -%} Top header bar - fixed to section {%- endcomment -%}
+  <div class="gift-guide-header">
+    <div class="gift-guide-header-content">
+      <button
+        class="gift-guide-hamburger mobile-only"
+        aria-label="Menu"
+      >
+        <div class="icon-hamburger">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </div>
+        <div class="icon-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </div>
+      </button>
+      <div class="gift-guide-logo">
+        {{ section.settings.logo_text }}
+      </div>
+
+      <div class="gift-guide-tagline desktop-only">
+        {{ section.settings.tagline }}
+      </div>
+
+      {%- if section.settings.button1_text != blank -%}
+        <a
+          href="{{ section.settings.button1_link | default: '#' }}"
+          class="gift-guide-btn gift-guide-btn-yellow desktop-only"
+        >
+          <span class="btn-text">{{ section.settings.button1_text }}</span>
+          <span class="arrow arrow-left">{{ section.settings.button_arrow }}</span>
+          <span class="arrow arrow-right">{{ section.settings.button_arrow }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="gift-guide-mobile-menu">
+      <div class="gift-guide-mobile-menu-content">
+        <div class="gift-guide-tagline mobile-menu-item">
+          {{ section.settings.tagline }}
+        </div>
+        {%- if section.settings.button1_text != blank -%}
+          <a
+            href="{{ section.settings.button1_link | default: '#' }}"
+            class="gift-guide-btn gift-guide-btn-yellow mobile-menu-item"
+          >
+            <span class="btn-text">{{ section.settings.button1_text }}</span>
+            <span class="arrow arrow-left">{{ section.settings.button_arrow }}</span>
+            <span class="arrow arrow-right">{{ section.settings.button_arrow }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  <div class="hero-section container">
+    <div class="up-section">
+      <div class="gift-guide-image-wrapper">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'gift-guide-img' }}
+        {%- else -%}
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'guide-img-1' }}
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="bottom-section">
+      <div class="gift-guide-content">
+        {%- if section.settings.heading != blank -%}
+          <h1 class="gift-guide-heading">{{ section.settings.heading }}</h1>
+        {%- endif -%}
+        {%- if section.settings.description_intro != blank or section.settings.description_extra != blank -%}
+          <div class="gift-guide-description">
+            {{ section.settings.description_intro }}
+
+            {%- if section.settings.description_extra != blank -%}
+              <div class="desktop-only-content">
+                {{ section.settings.description_extra }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.button2_text != blank -%}
+          <a href="{{ section.settings.button2_link | default: '#' }}" class="gift-guide-btn gift-guide-btn-black">
+            <span class="btn-text">{{ section.settings.button2_text }}</span>
+            <span class="arrow arrow-left">{{ section.settings.button_arrow }}</span>
+            <span class="arrow arrow-right">{{ section.settings.button_arrow }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+      <div class="gift-guide-image-wrapper">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'gift-guide-img' }}
+        {%- else -%}
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'guide-img-2' }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Footer sustainability message {%- endcomment -%}
+  {%- if section.settings.footer_text != blank -%}
+    <div class="gift-guide-footer">
+      {{ section.settings.footer_text }}
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  (function () {
+    function initGiftGuide() {
+      var sectionId = '{{ section.id }}';
+      var wrapper = document.querySelector('.gift-guide-section[data-section-id="' + sectionId + '"]');
+
+      if (!wrapper) return;
+
+      var hamburger = wrapper.querySelector('.gift-guide-hamburger');
+      var menu = wrapper.querySelector('.gift-guide-mobile-menu');
+
+      if (hamburger && menu && !hamburger.dataset.initialized) {
+        hamburger.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          menu.classList.toggle('is-open');
+          this.classList.toggle('is-active');
+        });
+        hamburger.dataset.initialized = 'true';
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGiftGuide);
+    } else {
+      initGiftGuide();
+    }
+
+    document.addEventListener('shopify:section:load', function (event) {
+      if (event.detail.sectionId === '{{ section.id }}') {
+        initGiftGuide();
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Gift Guide Banner",
+  "tag": "section",
+  "class": "section-gift-guide",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Top Header Bar"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "button1_text",
+      "label": "Button 1 Text",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "header",
+      "content": "Main Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "richtext",
+      "id": "description_intro",
+      "label": "Description (Always Visible)",
+      "default": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description_extra",
+      "label": "Extra Description (Desktop Only)",
+      "default": "<p>Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button2_text",
+      "label": "Button 2 Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "text",
+      "id": "button_arrow",
+      "label": "Button Arrow Symbol",
+      "default": "⟶"
+    },
+    {
+      "type": "header",
+      "content": "Footer Bar"
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Footer Message",
+      "default": "SUSTAINABLE: ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift Guide Banner"
+    }
+  ]
+}
+{% endschema %}
